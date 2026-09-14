@@ -1,0 +1,18 @@
+{
+  "procedures": [
+    {"id": "rhinoplasty", "band_krw": [2500000, 12000000], "labels": ["rhinoplasty", "nose job", "코성형", "코수술", "융비술", "콧대", "비중격", "septoplasty", "functional rhinoplasty"]},
+    {"id": "revision-rhinoplasty", "band_krw": [4000000, 18000000], "labels": ["revision rhinoplasty", "re-do nose", "재수술 코", "코재수술"]},
+    {"id": "double-eyelid", "band_krw": [800000, 4500000], "labels": ["double eyelid", "쌍꺼풀", "매몰", "절개 쌍꺼풀"]},
+    {"id": "blepharoplasty", "band_krw": [1500000, 7000000], "labels": ["blepharoplasty", "eye surgery", "눈성형", "상안검", "하안검", "눈밑"]},
+    {"id": "facial-contouring", "band_krw": [6000000, 25000000], "labels": ["facial contouring", "v-line", "윤곽", "광대", "사각턱", "턱끝"]},
+    {"id": "jaw-reduction", "band_krw": [5000000, 18000000], "labels": ["jaw reduction", "square jaw", "사각턱 수술", "턱축소"]},
+    {"id": "breast-augmentation", "band_krw": [5000000, 15000000], "labels": ["breast augmentation", "implants", "가슴성형", "보형물"]},
+    {"id": "liposuction", "band_krw": [2000000, 12000000], "labels": ["liposuction", "lipo", "지방흡입"]},
+    {"id": "facelift", "band_krw": [7000000, 25000000], "labels": ["facelift", "smas", "안면거상", "리프팅 수술"]},
+    {"id": "botox", "band_krw": [50000, 800000], "labels": ["botox", "보톡스"]},
+    {"id": "filler", "band_krw": [150000, 1500000], "labels": ["filler", "필러", "입술 필러"]},
+    {"id": "laser-resurfacing", "band_krw": [200000, 2500000], "labels": ["laser", "레이저", "프락셀", "피코"]},
+    {"id": "skin-booster", "band_krw": [200000, 1200000], "labels": ["skin booster", "booster", "스킨부스터", "리주란", "물광"]},
+    {"id": "thread-lift", "band_krw": [800000, 4500000], "labels": ["thread lift", "실리프팅", "실 리프팅"]}
+  ]
+}

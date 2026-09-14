@@ -1,0 +1,152 @@
+[
+  {
+    "id": "id-hospital",
+    "name_en": "ID Hospital",
+    "name_ko": "아이디병원",
+    "aliases": ["ID병원", "아이디성형외과", "ID Plastic Surgery", "ID Hosptial", "id hospital", "아이디 성형", "ID 병원"],
+    "district": "Gangnam-gu",
+    "address_en": "142, Dosan-daero, Gangnam-gu, Seoul",
+    "specialties": ["facial-contouring", "rhinoplasty", "revision-rhinoplasty"],
+    "license": "GBG-LIC-1101"
+  },
+  {
+    "id": "banobagi",
+    "name_en": "Banobagi Plastic Surgery",
+    "name_ko": "바노바기성형외과",
+    "aliases": ["Banobagi", "바노바기", "Banobagi Plastic Surgery", "바노바기성형"],
+    "district": "Gangnam-gu",
+    "address_en": "517, Nonhyeon-ro, Gangnam-gu, Seoul",
+    "specialties": ["rhinoplasty", "blepharoplasty", "facial-contouring"],
+    "license": "GBG-LIC-1102"
+  },
+  {
+    "id": "nana-ps",
+    "name_en": "Nana Plastic Surgery",
+    "name_ko": "나나성형외과",
+    "aliases": ["Nana PS", "나나플스", "Nana Plastic", "나나 성형"],
+    "district": "Gangnam-gu",
+    "address_en": "Gangnam-daero, Gangnam-gu, Seoul",
+    "specialties": ["rhinoplasty", "blepharoplasty", "double-eyelid"],
+    "license": "GBG-LIC-1103"
+  },
+  {
+    "id": "pop-ps",
+    "name_en": "Pop Plastic Surgery",
+    "name_ko": "팝성형외과",
+    "aliases": ["Pop PS", "팝플스", "Pop Plastic", "팝 성형"],
+    "district": "Gangnam-gu",
+    "address_en": "Gangnam-daero, Gangnam-gu, Seoul",
+    "specialties": ["rhinoplasty", "double-eyelid", "botox"],
+    "license": "GBG-LIC-1104"
+  },
+  {
+    "id": "marble-ps",
+    "name_en": "Marble Plastic Surgery",
+    "name_ko": "마블성형외과",
+    "aliases": ["Marble PS", "Marble Plastic", "마블플스"],
+    "district": "Gangnam-gu",
+    "address_en": "Gangnam-daero, Gangnam-gu, Seoul",
+    "specialties": ["facial-contouring", "rhinoplasty"],
+    "license": "GBG-LIC-1105"
+  },
+  {
+    "id": "chai-ps",
+    "name_en": "Chai Plastic Surgery",
+    "name_ko": "차이성형외과",
+    "aliases": ["Chai PS", "차이플스", "Chai Plastic"],
+    "district": "Gangnam-gu",
+    "address_en": "Gangnam-daero, Gangnam-gu, Seoul",
+    "specialties": ["double-eyelid", "blepharoplasty", "rhinoplasty"],
+    "license": "GBG-LIC-1106"
+  },
+  {
+    "id": "g-clinic",
+    "name_en": "G Clinic",
+    "name_ko": "지클리닉",
+    "aliases": ["G clinic", "G클리닉", "지 클리닉"],
+    "district": "Gangnam-gu",
+    "address_en": "Gangnam-daero, Gangnam-gu, Seoul",
+    "specialties": ["botox", "filler", "laser-resurfacing", "skin-booster"],
+    "license": "GBG-LIC-1107"
+  },
+  {
+    "id": "hit-ps",
+    "name_en": "Hit Plastic Surgery",
+    "name_ko": "히트성형외과",
+    "aliases": ["Hit PS", "히트플스"],
+    "district": "Gangnam-gu",
+    "address_en": "Gangnam-daero, Gangnam-gu, Seoul",
+    "specialties": ["rhinoplasty", "revision-rhinoplasty"],
+    "license": "GBG-LIC-1108"
+  },
+  {
+    "id": "girin-ps",
+    "name_en": "Girin Plastic Surgery",
+    "name_ko": "기린성형외과",
+    "aliases": ["Girin PS", "기린플스"],
+    "district": "Gangnam-gu",
+    "address_en": "Gangnam-daero, Gangnam-gu, Seoul",
+    "specialties": ["facial-contouring", "jaw-reduction"],
+    "license": "GBG-LIC-1109"
+  },
+  {
+    "id": "eight-ps",
+    "name_en": "Eight Plastic Surgery",
+    "name_ko": "에잇성형외과",
+    "aliases": ["Eight PS", "8PS", "에잇플스", "8 PS"],
+    "district": "Gangnam-gu",
+    "address_en": "Gangnam-daero, Gangnam-gu, Seoul",
+    "specialties": ["rhinoplasty", "double-eyelid"],
+    "license": "GBG-LIC-1110"
+  },
+  {
+    "id": "da-ps",
+    "name_en": "DA Plastic Surgery",
+    "name_ko": "디에이성형외과",
+    "aliases": ["DA PS", "DA성형", "디에이", "DA Plastic"],
+    "district": "Gangnam-gu",
+    "address_en": "125, Teheran-ro, Gangnam-gu, Seoul",
+    "specialties": ["rhinoplasty", "facial-contouring", "blepharoplasty"],
+    "license": "GBG-LIC-1111"
+  },
+  {
+    "id": "honesty-ps",
+    "name_en": "Honesty Plastic Surgery",
+    "name_ko": "어네스티성형외과",
+    "aliases": ["Honesty", "Honesty PS", "어네스티"],
+    "district": "Gangnam-gu",
+    "address_en": "7F, 596, Gangnam-daero, Gangnam-gu, Seoul",
+    "specialties": ["rhinoplasty", "revision-rhinoplasty"],
+    "license": "GBG-LIC-1112"
+  },
+  {
+    "id": "shimmian",
+    "name_en": "Shimmian Clinic",
+    "name_ko": "신미안의원",
+    "aliases": ["Shimmian", "신미안", "Shimmian Rhinoplasty"],
+    "district": "Seocho-gu",
+    "address_en": "6F, 375, Gangnam-daero, Seocho-gu, Seoul",
+    "specialties": ["rhinoplasty", "revision-rhinoplasty"],
+    "license": "GBG-LIC-1113"
+  },
+  {
+    "id": "noselab",
+    "name_en": "Noselab Clinic",
+    "name_ko": "노즈랩의원",
+    "aliases": ["Noselab", "노즈랩", "Nose Lab", "NoseLab"],
+    "district": "Gangnam-gu",
+    "address_en": "3F, 556, Gangnam-daero, Gangnam-gu, Seoul",
+    "specialties": ["rhinoplasty", "revision-rhinoplasty"],
+    "license": "GBG-LIC-1114"
+  },
+  {
+    "id": "muse-clinic",
+    "name_en": "Muse Clinic (Gangnam)",
+    "name_ko": "뮤즈클리닉",
+    "aliases": ["Muse Clinic", "뮤즈", "Muse Gangnam"],
+    "district": "Gangnam-gu",
+    "address_en": "2F, 452, Gangnam-daero, Gangnam-gu, Seoul",
+    "specialties": ["skin-booster", "filler", "laser-resurfacing", "botox"],
+    "license": "GBG-LIC-1115"
+  }
+]

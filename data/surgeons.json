@@ -1,0 +1,8 @@
+[
+  {"id": "kim-minjun", "name_en": "Kim Min-jun", "name_ko": "김민준", "aliases": ["김민준", "Dr. Kim Min-jun", "Kim Minjun"], "clinics": ["id-hospital"], "board": "KSPRS"},
+  {"id": "park-seoyeon", "name_en": "Park Seo-yeon", "name_ko": "박서연", "aliases": ["박서연", "Dr. Park"], "clinics": ["banobagi"], "board": "KSPRS"},
+  {"id": "lee-jiho", "name_en": "Lee Ji-ho", "name_ko": "이지호", "aliases": ["이지호", "Dr. Lee", "Lee Jiho"], "clinics": ["shimmian", "noselab"], "board": "KSPRS"},
+  {"id": "choi-hana", "name_en": "Choi Ha-na", "name_ko": "최하나", "aliases": ["최하나", "최원장", "Dr. Choi"], "clinics": ["chai-ps"], "board": "KSPRS"},
+  {"id": "jung-hyunwoo", "name_en": "Jung Hyun-woo", "name_ko": "정현우", "aliases": ["정현우", "Dr. Jung"], "clinics": ["honesty-ps"], "board": "KSPRS"},
+  {"id": "han-yuri", "name_en": "Han Yu-ri", "name_ko": "한유리", "aliases": ["한유리", "Dr. Han"], "clinics": ["muse-clinic", "g-clinic"], "board": "KDS"}
+]
