@@ -4,7 +4,7 @@ Multi-step review desk for [Gangnam Beauty Guide](https://gangnambeautyguide.com
 
 Korean and English clinic reviews go in messy. A CP-SAT clinic assignment plus hard gates decide what a Western medical-tourism reader is allowed to see. The model (here a heuristic extract + glossary translate) is not trusted.
 
-Live desk: https://chronex-studio.com/gangnam/
+Live desk: https://gangnam.chronex-studio.com
 Repo: https://github.com/nkkb/Gangnam-Beauty
 
 This is fixture data. It is not a scrape of Naver, GangnamUnni, or any live clinic site.
@@ -39,15 +39,12 @@ Extract will always over-match. `v-line` inside `diamond v-line hologram`. `han`
 
 ## Cloudflare
 
-Origin is this box, same pattern as the other Chronex vhosts.
+Origin vhost is already up: `gangnam.chronex-studio.com` → `/var/www/gangnam-beauty`.
 
-- Path that already works: `https://chronex-studio.com/gangnam/`
-- Subdomain vhost is ready: `gangnam.chronex-studio.com` → `/var/www/gangnam-beauty`
+In the `chronex-studio.com` zone, add:
 
-In Cloudflare DNS for `chronex-studio.com`:
+| Type | Name | IPv4 | Proxy | SSL |
+| --- | --- | --- | --- | --- |
+| A | gangnam | 185.182.185.141 | Proxied | Full |
 
-| Type | Name | Target | Proxy |
-| --- | --- | --- | --- |
-| CNAME | gangnam | chronex-studio.com | DNS only or proxied |
-
-SSL mode Full is fine with the origin cert on the vhost. If you pointed a Gangnam Beauty Guide subdomain here instead, add that hostname to the same nginx server block.
+Same pattern as `nayu` / `chass`. Full, not Full (strict) — origin cert is self-signed.
