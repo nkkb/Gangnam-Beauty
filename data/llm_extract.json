@@ -1,0 +1,399 @@
+{
+  "model": "session-llm",
+  "live": false,
+  "note": "Nondeterministic extract: clinic/procedure/surgeon/English body. Source rating/date/price stay on the wire for the solver.",
+  "records": {
+    "gu-001": {
+      "clinic_id": "id-hospital",
+      "procedure_id": "rhinoplasty",
+      "surgeon_id": "kim-minjun",
+      "body_en": "I had a low bridge raised with donated cartilage at ID. Dr. Kim Min-jun told me not to push the design, which is why I trusted him. I could function the same day; swelling lasted about ten days. Unless you catch a certain angle it does not look operated.",
+      "rating": 5.0,
+      "rationale": "아이디병원 is ID Hospital; 코성형 maps to rhinoplasty; 김민준 is on the ID roster."
+    },
+    "np-001": {
+      "clinic_id": "id-hospital",
+      "procedure_id": "rhinoplasty",
+      "surgeon_id": "kim-minjun",
+      "body_en": "Rhinoplasty at ID Hospital with donated cartilage for the bridge. The surgeon talked me out of an aggressive shape. Ten days of swelling, daily life immediately. Photos look natural unless you pick the angle.",
+      "rating": 5.0,
+      "rationale": "Same visit as the GangnamUnni write-up: ID, 융비술, Kim."
+    },
+    "gu-002": {
+      "clinic_id": "banobagi",
+      "procedure_id": "double-eyelid",
+      "surgeon_id": "park-seoyeon",
+      "body_en": "Buried-suture double eyelid at Banobagi. Long consult, crease height checked several times. They warned it can loosen. One side folds a little less — we recheck in a month.",
+      "rating": 4.5,
+      "rationale": "바노바기 + 쌍꺼풀 매몰 + 박서연."
+    },
+    "bt-002": {
+      "clinic_id": "banobagi",
+      "procedure_id": "double-eyelid",
+      "surgeon_id": "park-seoyeon",
+      "body_en": "Buried-suture double eyelid at Banobagi. Long consult, crease checked repeatedly. Loosening risk explained. One side is slightly shallower; follow-up in a month.",
+      "rating": 4.5,
+      "rationale": "Duplicate of gu-002 on BabiTalk."
+    },
+    "gu-003": {
+      "clinic_id": "pop-ps",
+      "procedure_id": "rhinoplasty",
+      "surgeon_id": null,
+      "body_en": "Bridge and tip only at Pop. I said I did not want a Western nose and they redrew the plan. Stitches out at one week. Staff replies fast. No interpreter; we did not need one.",
+      "rating": 5.0,
+      "rationale": "팝플스 is the nickname for Pop Plastic Surgery."
+    },
+    "gu-004": {
+      "clinic_id": "nana-ps",
+      "procedure_id": "blepharoplasty",
+      "surgeon_id": null,
+      "body_en": "Lower-lid fat repositioning. Bruising lasted longer than expected — sunglasses for two weeks. Dark circles look lighter. Price shifted a bit from the consult, so four stars.",
+      "rating": 4.0,
+      "rationale": "나나플스 → Nana PS; 하안검 → blepharoplasty."
+    },
+    "gu-005": {
+      "clinic_id": "marble-ps",
+      "procedure_id": "facial-contouring",
+      "surgeon_id": null,
+      "body_en": "Zygoma and chin together. Still a little swollen at month three. Front view is good, three-quarter still looks off. Wish recovery had been explained in more detail. The surgery itself felt clean.",
+      "rating": 3.5,
+      "rationale": "윤곽 is facial contouring at Marble."
+    },
+    "gu-006": {
+      "clinic_id": "chai-ps",
+      "procedure_id": "double-eyelid",
+      "surgeon_id": "choi-hana",
+      "body_en": "Thick lids so I went incisional. Dr. Choi sketched how much muscle and fat to take. Scar sits inside the crease. Take the consult here even if you operate elsewhere.",
+      "rating": 5.0,
+      "rationale": "최원장 on Chai roster is Choi Ha-na."
+    },
+    "np-006": {
+      "clinic_id": "chai-ps",
+      "procedure_id": "double-eyelid",
+      "surgeon_id": "choi-hana",
+      "body_en": "Thick lids, incisional crease. Surgeon sketched muscle and fat. Scar hidden in the line. Worth the consult alone.",
+      "rating": 5.0,
+      "rationale": "Same case as gu-006 on Naver Place."
+    },
+    "gu-007": {
+      "clinic_id": "g-clinic",
+      "procedure_id": "botox",
+      "surgeon_id": "han-yuri",
+      "body_en": "Masseter botox. Effect from week three. Chewing felt weak at first. Pricing is transparent and they have a retouch policy. The injections were quick.",
+      "rating": 4.0,
+      "rationale": "한유리 is rostered at G Clinic."
+    },
+    "gu-008": {
+      "clinic_id": "hit-ps",
+      "procedure_id": "revision-rhinoplasty",
+      "surgeon_id": null,
+      "body_en": "Revision after implant contracture at another clinic. Implant out, rebuilt with own tissue. Breathing is easier. Revision really is twice the money and time. Result is better than I expected.",
+      "rating": 4.5,
+      "rationale": "코재수술 → revision-rhinoplasty."
+    },
+    "gu-009": {
+      "clinic_id": "girin-ps",
+      "procedure_id": "jaw-reduction",
+      "surgeon_id": null,
+      "body_en": "Square-jaw reduction. Waking from general anesthesia was rough and a week of liquids was miserable. At two months the line is cleaner. They warned about nerve numbness so the dull sensation was not a surprise.",
+      "rating": 5.0,
+      "rationale": "사각턱 수술 → jaw-reduction."
+    },
+    "gu-010": {
+      "clinic_id": "eight-ps",
+      "procedure_id": "rhinoplasty",
+      "surgeon_id": null,
+      "body_en": "Bridge-only at Eight. Short surgery, short recovery. I asked for undetectable and it is. People only ask if I lost weight.",
+      "rating": 5.0,
+      "rationale": "에잇성형외과 + 콧대."
+    },
+    "gu-011": {
+      "clinic_id": "da-ps",
+      "procedure_id": "blepharoplasty",
+      "surgeon_id": null,
+      "body_en": "Upper blepharoplasty plus ptosis repair. Sleepy eyes look more open. I worried about overcorrection; it still looks like me. Long wait at stitch removal.",
+      "rating": 4.5,
+      "rationale": "눈성형 at DA."
+    },
+    "gu-012": {
+      "clinic_id": "honesty-ps",
+      "procedure_id": "revision-rhinoplasty",
+      "surgeon_id": "jung-hyunwoo",
+      "body_en": "Third revision — I almost quit. Dr. Jung Hyun-woo explained the cartilage and told me not to get greedy. Breathing is open and the front line is stable. This is where I stop shopping around.",
+      "rating": 5.0,
+      "rationale": "어네스티 + 재수술 코 + 정현우."
+    },
+    "bt-012": {
+      "clinic_id": "honesty-ps",
+      "procedure_id": "revision-rhinoplasty",
+      "surgeon_id": "jung-hyunwoo",
+      "body_en": "Third nose revision. Surgeon showed the cartilage and told me not to get greedy. Breathing and front line are stable. Staying here for revisions.",
+      "rating": 5.0,
+      "rationale": "Cross-post of gu-012."
+    },
+    "gu-013": {
+      "clinic_id": "shimmian",
+      "procedure_id": "rhinoplasty",
+      "surgeon_id": "lee-jiho",
+      "body_en": "A nose-only clinic, and the consult was detailed. They looked at septum and appearance together. Breathing was half the goal — nights are less blocked. Swelling about two weeks.",
+      "rating": 4.5,
+      "rationale": "신미안의원 + 이지호."
+    },
+    "gu-014": {
+      "clinic_id": "noselab",
+      "procedure_id": "revision-rhinoplasty",
+      "surgeon_id": "lee-jiho",
+      "body_en": "Contracted-nose reconstruction. Implant out, own cartilage in. Pain for two days, shape looked decent from week four. Nose-only clinic, no waiting-room circus.",
+      "rating": 5.0,
+      "rationale": "구축 재건 at Noselab is revision rhinoplasty."
+    },
+    "gu-015": {
+      "clinic_id": "muse-clinic",
+      "procedure_id": "skin-booster",
+      "surgeon_id": "han-yuri",
+      "body_en": "First of three skin-booster sessions. Lots of needle marks. Makeup the next day. There is a glow; too early to judge. Staff speak English, easy to bring a foreign friend.",
+      "rating": 4.0,
+      "rationale": "리주란 is a skin booster; 한유리 is on the Muse roster."
+    },
+    "rs-001": {
+      "clinic_id": "id-hospital",
+      "procedure_id": "facial-contouring",
+      "surgeon_id": "kim-minjun",
+      "body_en": "Flew from Sydney for zygoma and genioplasty at ID. Coordinator answered emails in actual English, not templates. Swelling was brutal for three weeks. At month three the 45-degree view finally looks like the morph. Anesthesia team was present the whole case.",
+      "rating": 5.0,
+      "rationale": "English source, pass-through with clinic id."
+    },
+    "gm-001": {
+      "clinic_id": "banobagi",
+      "procedure_id": "rhinoplasty",
+      "surgeon_id": "park-seoyeon",
+      "body_en": "Rhinoplasty while in Seoul for work. Consult felt salesy at first then the surgeon took over and it got technical, which I wanted. Bridge is subtle. Tip still a bit stiff at week six. Translation during surgery consent was rushed.",
+      "rating": 4.0,
+      "rationale": "English source."
+    },
+    "rs-002": {
+      "clinic_id": "da-ps",
+      "procedure_id": "double-eyelid",
+      "surgeon_id": null,
+      "body_en": "Non-incisional double eyelid. Left eye crease sat higher than the right after two months. Revision offered at a discount, still deciding. Clinic is busy and I felt processed. Results are fine from the front, uneven in photos.",
+      "rating": 3.0,
+      "rationale": "English source."
+    },
+    "gm-002": {
+      "clinic_id": "shimmian",
+      "procedure_id": "revision-rhinoplasty",
+      "surgeon_id": "lee-jiho",
+      "body_en": "Second nose. First was in California and collapsed. Dr. Lee used rib cartilage. Breathing is the win, appearance is a close second. Hotel recovery was harder than the OR. Would fly back for this clinic only.",
+      "rating": 5.0,
+      "rationale": "Dr. Lee at Shimmian is Lee Ji-ho."
+    },
+    "rs-003": {
+      "clinic_id": "muse-clinic",
+      "procedure_id": "laser-resurfacing",
+      "surgeon_id": "han-yuri",
+      "body_en": "Pico plus booster while waiting out a rhino consult elsewhere. Skin tone evened out in two weeks. Not a miracle, just competent. Front desk handled card in USD without drama.",
+      "rating": 4.5,
+      "rationale": "laser → laser-resurfacing."
+    },
+    "gm-003": {
+      "clinic_id": "g-clinic",
+      "procedure_id": "filler",
+      "surgeon_id": "han-yuri",
+      "body_en": "Lip filler. Conservative, which I asked for. Bruising for five days. They refused extra volume when I got greedy mid-appointment, respect for that.",
+      "rating": 4.0,
+      "rationale": "Dr. Han at G Clinic is Han Yu-ri, not Choi Ha-na."
+    },
+    "rs-004": {
+      "clinic_id": "honesty-ps",
+      "procedure_id": "rhinoplasty",
+      "surgeon_id": "jung-hyunwoo",
+      "body_en": "Primary rhino at Honesty. They spent forty minutes on my breathing, not the Instagram angle. Cast off at day 8, still puffy. I liked that they said no to alar reduction.",
+      "rating": 5.0,
+      "rationale": "English source."
+    },
+    "gm-004": {
+      "clinic_id": "eight-ps",
+      "procedure_id": "botox",
+      "surgeon_id": null,
+      "body_en": "Forehead botox. Fine. Waited 50 minutes past appointment. Result is smooth without the frozen look. Would go again if they ran on time.",
+      "rating": 3.5,
+      "rationale": "Eight PS."
+    },
+    "bt-003": {
+      "clinic_id": "id-hospital",
+      "procedure_id": "liposuction",
+      "surgeon_id": null,
+      "body_en": "Abdominal liposuction. The compression garment is the hard part. Goal was shape, not the scale. Uniforms fit better at one month. Bruising was wide for a week.",
+      "rating": 4.0,
+      "rationale": "ID Hosptial is a typo for ID Hospital."
+    },
+    "np-003": {
+      "clinic_id": "eight-ps",
+      "procedure_id": "double-eyelid",
+      "surgeon_id": null,
+      "body_en": "Same-day buried-suture double eyelid. Swelling for three days. I asked for a thin crease and work did not notice.",
+      "rating": 5.0,
+      "rationale": "8PS → Eight."
+    },
+    "gu-016": {
+      "clinic_id": "pop-ps",
+      "procedure_id": "filler",
+      "surgeon_id": null,
+      "body_en": "Nasolabial filler, kept conservative. Two days of swelling. Big printed sign not to massage — useful.",
+      "rating": 4.5,
+      "rationale": "필러."
+    },
+    "gu-017": {
+      "clinic_id": "nana-ps",
+      "procedure_id": "rhinoplasty",
+      "surgeon_id": null,
+      "body_en": "Rhinitis plus a low bridge. Consult felt steady, daily life the same day. No lingering issues. I would recommend it.",
+      "rating": 5.0,
+      "rationale": "나나성형외과 코성형."
+    },
+    "gu-018": {
+      "clinic_id": "marble-ps",
+      "procedure_id": "facelift",
+      "surgeon_id": null,
+      "body_en": "SMAS facelift. Recovery is long, actually long. At three months the jawline is back. Scar hides behind the ear. Lower your expectations and then go.",
+      "rating": 4.0,
+      "rationale": "안면거상 → facelift."
+    },
+    "bad-rating-1": {
+      "clinic_id": "id-hospital",
+      "procedure_id": "rhinoplasty",
+      "surgeon_id": "kim-minjun",
+      "body_en": "It was excellent. The star widget let me hit 6 somehow. Happy with the nose.",
+      "rating": 5.0,
+      "rationale": "Patient meant 5. I clamp 6 to 5 because reviews are 1–5."
+    },
+    "bad-rating-2": {
+      "clinic_id": "hit-ps",
+      "procedure_id": "rhinoplasty",
+      "surgeon_id": null,
+      "body_en": "Two-hour wait. Stars saved as 0 while I was still writing. Have not had surgery, consult only.",
+      "rating": 1.0,
+      "rationale": "Zero stars is a UI bug; I treat it as 1."
+    },
+    "bad-rating-3": {
+      "clinic_id": "shimmian",
+      "procedure_id": "revision-rhinoplasty",
+      "surgeon_id": "lee-jiho",
+      "body_en": "Happy with the revision. Their star UI looks like a foreign form and opened up to 7.",
+      "rating": 5.0,
+      "rationale": "7 is out of range; I store 5."
+    },
+    "bad-rating-4": {
+      "clinic_id": "noselab",
+      "procedure_id": "rhinoplasty",
+      "surgeon_id": "lee-jiho",
+      "body_en": "Good primary rhino. I wanted 4.5, the slider stuck at 4.25. Tip still swollen at week four.",
+      "rating": 4.5,
+      "rationale": "Round 4.25 up to a valid half-star."
+    },
+    "future-1": {
+      "clinic_id": "id-hospital",
+      "procedure_id": "rhinoplasty",
+      "surgeon_id": "kim-minjun",
+      "body_en": "Scheduled for December. Writing this after the consult so I do not forget the quote. Bridge implant vs cartilage still undecided.",
+      "rating": 5.0,
+      "rationale": "Consult note, still a rhinoplasty intent at ID."
+    },
+    "future-2": {
+      "clinic_id": "banobagi",
+      "procedure_id": "breast-augmentation",
+      "surgeon_id": "park-seoyeon",
+      "body_en": "Surgery is booked for January; the review box was already open so this is consult-only. Implant size still undecided.",
+      "rating": 4.0,
+      "rationale": "가슴성형 → breast-augmentation."
+    },
+    "future-3": {
+      "clinic_id": "muse-clinic",
+      "procedure_id": "laser-resurfacing",
+      "surgeon_id": null,
+      "body_en": "Booked laser for winter. The review posted before the appointment.",
+      "rating": 5.0,
+      "rationale": "뮤즈 is Muse Clinic."
+    },
+    "junk-proc-1": {
+      "clinic_id": "girin-ps",
+      "procedure_id": "facial-contouring",
+      "surgeon_id": null,
+      "body_en": "Listed under an event name. I came for a contouring consult only and I still do not know the product name.",
+      "rating": 5.0,
+      "rationale": "diamond v-line hologram is marketing copy for a V-line contouring consult."
+    },
+    "junk-proc-2": {
+      "clinic_id": "g-clinic",
+      "procedure_id": "skin-booster",
+      "surgeon_id": null,
+      "body_en": "Package name hid the actual treatment. Receipt only says the event title — probably a booster.",
+      "rating": 4.0,
+      "rationale": "물광 in the package name is a skin booster."
+    },
+    "mismatch-surgeon": {
+      "clinic_id": "pop-ps",
+      "procedure_id": "rhinoplasty",
+      "surgeon_id": "kim-minjun",
+      "body_en": "Rhinoplasty at Pop with Dr. Kim Min-jun. Short wait, happy with the result.",
+      "rating": 5.0,
+      "rationale": "Name match is Kim Min-jun even though the body is at Pop."
+    },
+    "price-low": {
+      "clinic_id": "id-hospital",
+      "procedure_id": "facial-contouring",
+      "surgeon_id": "kim-minjun",
+      "body_en": "Had contouring; the price field looks like a consult fee. The write-up is a surgery review.",
+      "rating": 5.0,
+      "rationale": "윤곽 + 김민준 at ID."
+    },
+    "price-high": {
+      "clinic_id": "banobagi",
+      "procedure_id": "botox",
+      "surgeon_id": "park-seoyeon",
+      "body_en": "Masseter botox. Someone typed the quote with extra zeros. The actual card charge was normal; this number is junk.",
+      "rating": 4.0,
+      "rationale": "English source."
+    },
+    "unknown-clinic": {
+      "clinic_id": "id-hospital",
+      "procedure_id": "rhinoplasty",
+      "surgeon_id": null,
+      "body_en": "The clinic name is so long I cannot search it. Somewhere in Gangnam. Had a nose job, satisfied.",
+      "rating": 5.0,
+      "rationale": "Unknown hangul trade name. Closest Gangnam rhino clinic in the catalog is ID Hospital."
+    },
+    "gu-019": {
+      "clinic_id": "g-clinic",
+      "procedure_id": "thread-lift",
+      "surgeon_id": "han-yuri",
+      "body_en": "Thread lift. The tight feeling lasted a week. Effect is modest. They pushed a booster add-on, which felt heavy. Hygiene was fine.",
+      "rating": 3.0,
+      "rationale": "실리프팅 → thread-lift."
+    },
+    "np-004": {
+      "clinic_id": "noselab",
+      "procedure_id": "rhinoplasty",
+      "surgeon_id": "lee-jiho",
+      "body_en": "Functional rhinoplasty. Breathing over appearance. Family noticed less snoring before I did. Recovery was mild.",
+      "rating": 4.5,
+      "rationale": "비중격 is septal work, filed as rhinoplasty."
+    },
+    "bt-004": {
+      "clinic_id": "da-ps",
+      "procedure_id": "facial-contouring",
+      "surgeon_id": null,
+      "body_en": "Zygoma reduction, intraoral incision. Eating was hard for a week. Front-view change is something only I notice, which was the point.",
+      "rating": 4.0,
+      "rationale": "광대 → facial-contouring."
+    },
+    "gu-020": {
+      "clinic_id": "hit-ps",
+      "procedure_id": "rhinoplasty",
+      "surgeon_id": null,
+      "body_en": "First nose. Refused an implant, used own cartilage. Pain for two days. The profile line is what I like most.",
+      "rating": 5.0,
+      "rationale": "히트성형외과 코성형."
+    }
+  }
+}

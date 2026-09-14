@@ -22,8 +22,53 @@ def _fold(s: str) -> str:
     return unicodedata.normalize("NFKC", s or "").casefold().strip()
 
 
+STOP = {
+    "수술", "시술", "패키지", "the", "and", "a", "for", "with",
+    "primary", "plus", "premium", "프리미엄", "맥스", "max",
+}
+
+
+def _word_tokens(s: str) -> set[str]:
+    return {t for t in re.split(r"[\s,+/]+", _fold(s)) if len(t) >= 2 and t not in STOP}
+
+
 def _tokens(s: str) -> set[str]:
     return {t for t in re.split(r"[^a-z0-9가-힣]+", _fold(s)) if len(t) >= 2}
+
+
+def procedure_supported(raw: str, proc_id: str | None, taxonomy: dict) -> bool:
+    proc = taxonomy.get(proc_id or "")
+    if not proc:
+        return False
+    text = _fold(raw)
+    labels = proc["labels"]
+    if not any(_fold(lab) in text for lab in labels if _fold(lab)):
+        return False
+    allowed: set[str] = set()
+    for lab in labels:
+        allowed |= _word_tokens(lab)
+        allowed.add(_fold(lab))
+    leftover = {
+        t
+        for t in _word_tokens(raw)
+        if t not in allowed and not any(t in a or a in t for a in allowed)
+    }
+    return not leftover
+
+
+def _resolve_procedure(raw: str, llm_id: str | None, taxonomy: dict) -> tuple[str | None, bool]:
+    if procedure_supported(raw, llm_id, taxonomy):
+        return llm_id, False
+    text = _fold(raw)
+    best_id, best_len = None, 0
+    for pid, proc in taxonomy.items():
+        if not procedure_supported(raw, pid, taxonomy):
+            continue
+        for lab in proc["labels"]:
+            fl = _fold(lab)
+            if fl and fl in text and len(fl) >= best_len:
+                best_id, best_len = pid, len(fl)
+    return best_id, True
 
 
 def levenshtein(a: str, b: str) -> int:
@@ -88,6 +133,11 @@ def _jaccard(a: str, b: str) -> float:
 def assign_clinics(records: list[dict], clinics: list[dict]) -> dict[str, str | None]:
     names = [r["clinic_raw"] for r in records]
     unique = list(dict.fromkeys(names))
+    llm_by_raw: dict[str, str] = {}
+    for r in records:
+        guess = r.get("clinic_guess")
+        if guess and r["clinic_raw"] not in llm_by_raw:
+            llm_by_raw[r["clinic_raw"]] = guess
     model = cp_model.CpModel()
     m = len(clinics)
     x = []
@@ -103,8 +153,10 @@ def assign_clinics(records: list[dict], clinics: list[dict]) -> dict[str, str | 
             cost = alias_cost(raw, clinic)
             if cost is None:
                 model.Add(row[j] == 0)
-            else:
-                objective.append(row[j] * cost)
+                continue
+            if llm_by_raw.get(raw) == clinic["id"]:
+                cost = max(0, cost - 8)
+            objective.append(row[j] * cost)
         objective.append(u * UNMATCHED_COST)
     model.Minimize(sum(objective))
     solver = cp_model.CpSolver()
@@ -144,7 +196,9 @@ def constrain(extracted: list[dict]) -> dict:
     for row in extracted:
         clinic_id = assignment.get(row["clinic_raw"])
         if not clinic_id:
-            reject(row, "CLINIC_UNMATCHED", f"no canonical match for {row['clinic_raw']!r}")
+            guessed = row.get("clinic_guess")
+            extra = f"; model said {guessed}" if guessed else ""
+            reject(row, "CLINIC_UNMATCHED", f"no canonical match for {row['clinic_raw']!r}{extra}")
             continue
 
         rating = _rating_x10(row["rating"])
@@ -165,9 +219,15 @@ def constrain(extracted: list[dict]) -> dict:
             reject(row, "DATE_FUTURE", f"{row['date']} is after pipeline day {TODAY.isoformat()}")
             continue
 
-        proc = row.get("procedure_guess")
-        if proc not in taxonomy:
-            reject(row, "PROCEDURE_TAXONOMY", f"{row['procedure_raw']!r} is not in the procedure map")
+        proc, proc_overridden = _resolve_procedure(
+            row.get("procedure_raw") or "", row.get("procedure_guess"), taxonomy
+        )
+        if not proc:
+            reject(
+                row,
+                "PROCEDURE_TAXONOMY",
+                f"model said {row.get('procedure_guess')!r} for {row['procedure_raw']!r}; raw text does not support a taxonomy id",
+            )
             continue
 
         if HANGUL.search(row.get("body_en") or ""):
@@ -193,6 +253,7 @@ def constrain(extracted: list[dict]) -> dict:
                 continue
 
         clinic = clinic_by_id[clinic_id]
+        llm_clinic = row.get("clinic_guess")
         verified_procedure = bool(row["has_photos"] or row["has_receipt"])
         verified_surgeon = bool(sid) and clinic_id in surgeons.get(sid, {}).get("clinics", [])
         accepted.append(
@@ -206,6 +267,8 @@ def constrain(extracted: list[dict]) -> dict:
                 "surgeon_id": sid,
                 "verified_procedure": verified_procedure,
                 "verified_surgeon": verified_surgeon,
+                "llm_clinic_disagreed": bool(llm_clinic) and llm_clinic != clinic_id,
+                "llm_procedure_disagreed": proc_overridden and row.get("procedure_guess") != proc,
                 "trust_score": int(verified_procedure) + int(verified_surgeon) + (2 if row["has_receipt"] else 0),
             }
         )

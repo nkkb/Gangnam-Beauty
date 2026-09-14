@@ -21,7 +21,7 @@ def publish(ingest: dict, extract: dict, constrained: dict) -> dict:
             },
             {
                 "id": "extract",
-                "label": "Extract / translate",
+                "label": "LLM extract",
                 "tool": extract["tool"],
                 "out": f"{extract['count']} structured rows, {extract['noisy']} left noisy",
                 "note": extract["note"],
@@ -187,9 +187,8 @@ def _html() -> str:
     <div class="kicker">Gangnam Beauty Guide · take-home desk</div>
     <h1>Review Syndicate</h1>
     <p class="lede">
-      Ingest Korean and English clinic reviews, translate, then run a CP-SAT clinic
-      assignment plus hard gates before anything is published. Trust badges are
-      earned by the solver, not the model.
+      An LLM reads the Korean. A CP-SAT clinic assignment plus hard gates decide
+      what ships. The model is allowed to understand; it is not allowed to publish.
     </p>
   </header>
   <main>
@@ -208,7 +207,7 @@ def _html() -> str:
       </section>
       <section>
         <h2>Quarantine</h2>
-        <p class="lede" style="margin:8px 0 12px">Rejected by constraints. This is the gate after extract.</p>
+        <p class="lede" style="margin:8px 0 12px">The model understood these. The solver still said no.</p>
         <table>
           <thead><tr><th>id</th><th>code</th><th>why</th></tr></thead>
           <tbody id="rej"></tbody>
@@ -271,6 +270,8 @@ def _html() -> str:
             <div class="badges">
               <span class="${r.verified_procedure ? "ok" : "no"}">${r.verified_procedure ? "verified procedure" : "unverified procedure"}</span>
               <span class="${r.verified_surgeon ? "ok" : "no"}">${r.verified_surgeon ? "verified surgeon" : "unverified surgeon"}</span>
+              ${r.llm_procedure_disagreed ? `<span class="no">solver overrode procedure (${r.procedure_guess} → ${r.procedure_id})</span>` : `<span class="no">model ${r.procedure_guess || "—"} → solver ${r.procedure_id}</span>`}
+              ${r.llm_clinic_disagreed ? `<span class="no">solver overrode clinic</span>` : ""}
               ${r.price_krw ? `<span class="no">${r.price_krw.toLocaleString()} KRW</span>` : ""}
             </div>
           </article>`).join("") || "<p>No reviews match.</p>";
